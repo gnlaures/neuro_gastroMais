@@ -1,0 +1,14 @@
+.c-photo {
+	@extend .u-aspectRatio;
+	@extend .--ratio-1-1;
+	border-radius: var(--radius);
+	img {
+		@include transition();
+		@include scale(1, center);
+	}
+	&:hover {
+		img {
+			@include scale(1.05, center);
+		}
+	}
+}

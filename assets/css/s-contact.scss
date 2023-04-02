@@ -1,0 +1,10 @@
+@media screen and (max-width: 1140px) {
+	.s-contact {
+		.s-twoColsContent__col {
+			margin-bottom: 0 !important;
+			&:last-of-type {
+				display: none;
+			}
+		}
+	}
+}

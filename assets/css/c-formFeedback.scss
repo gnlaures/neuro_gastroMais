@@ -1,0 +1,82 @@
+$c-formFeedbackIconSize: 60px;
+
+@keyframes loader {
+	from {@include transforms(rotate(0deg), center)}
+	to {@include transforms(rotate(360deg), center)}
+}
+@mixin animation__loader() {
+	animation-name: loader;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-timing-function: ease;
+	animation-play-state: running;
+	//animation-fill-mode: forwards;
+	//animation-delay: 2s;
+}
+
+.c-formFeedback {
+	//background: #000;
+	&__status {
+		padding: 40px;
+		&__icon {
+			@include flexWidth($c-formFeedbackIconSize);
+			margin: 0 auto;
+			svg {
+				display: block;
+				width: 100%;
+				max-width: $c-formFeedbackIconSize;
+				height: $c-formFeedbackIconSize;
+			}
+		}
+		&__text {
+			@include preset__p();
+			font-weight: var(--fw__bold);
+			text-align: center;
+			padding: 15px 0;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 300px;
+		}
+		&__btn {
+			text-align: center;
+			.c-btn {
+				margin: 0 auto;
+				max-width: 300px;
+			}
+		}
+
+		&.--success {
+			.c-formFeedback__status__icon {
+				svg path {
+					fill: var(--feedback__success);
+				}
+			}
+			.c-btn__icon svg path {
+				fill: var(--white);
+				stroke: var(--white);
+			}
+		}
+		&.--fail {
+			.c-formFeedback__status__icon {
+				svg path {
+					fill: var(--feedback__error);
+				}
+			}
+			.c-btn__icon svg path {
+				fill: var(--white);
+				stroke: var(--white);
+			}
+		}
+		&.--load {
+			.c-formFeedback__status__icon {
+				svg {
+					@include animation__loader;
+				}
+				svg path {
+					fill: var(--feedback__load);
+				}
+			}
+		}
+	}
+}

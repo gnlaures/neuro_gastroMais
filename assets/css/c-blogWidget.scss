@@ -1,0 +1,28 @@
+.c-blogWidget {
+	&__title {
+		display: block;
+		margin-bottom: 10px;
+		h4 {
+			@include preset__h4();
+		}
+	}
+	&__content {
+
+	}
+}
+
+.c-blogWidget.--categories {
+	li {
+		margin-bottom: 10px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	a {
+		@include preset__p();
+		&:hover {
+			color: var(--primary);
+			text-decoration: underline;
+		}
+	}
+}

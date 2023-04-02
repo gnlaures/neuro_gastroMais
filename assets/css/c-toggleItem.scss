@@ -1,0 +1,57 @@
+.c-toggleItem {
+	&__head {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 15px;
+		cursor: pointer;
+		h3 {
+			@include transition();
+			@include preset__h4();
+			color: var(--text);
+		}
+		span {
+			@include transition();
+			@include rotate(0deg, center);
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			width: 30px;
+			height: 30px;
+			* {
+				display: block;
+				width: 14px;
+				height: 14px;
+			}
+			svg path {
+				stroke: var(--primary);
+			}
+		}
+		&:hover {
+			h3 {
+				color: var(--primary);
+			}
+		}
+	}
+	&__content {
+		@include transition();
+		padding-top: 0;
+		display: none;
+	}
+
+	&.is-active {
+		.c-toggleItem__head {
+			h3 {
+				color: var(--primary);
+			}
+			span {
+				@include rotate(180deg, center);
+			}
+		}
+		.c-toggleItem__content {
+			display: block;
+		}
+	}
+}

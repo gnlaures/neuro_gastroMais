@@ -1,0 +1,10 @@
+.c-copyright {
+	p {
+		@include preset__p(var(--white));
+		font-size: 14px;
+		margin-bottom: 6px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}

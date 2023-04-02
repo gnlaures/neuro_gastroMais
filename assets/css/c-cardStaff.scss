@@ -1,0 +1,22 @@
+.c-cardStaff {
+	display: block;
+	background: var(--white);
+	box-shadow: var(--white);
+	border-radius: var(--radius);
+	&__photo {
+		@extend .u-aspectRatio;
+		@extend .--ratio-1-1;
+		img {
+			border-radius: var(--radius);
+		}
+	}
+	&__infos {
+		padding: 20px;
+		h3 {
+			@include preset__h3();
+		}
+		span {
+			@include preset__p();
+		}
+	}
+}

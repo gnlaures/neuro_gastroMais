@@ -1,0 +1,14 @@
+@keyframes loader {
+	from {@include transforms(rotate(0deg), center)}
+	to {@include transforms(rotate(360deg), center)}
+}
+@mixin animation__loader() {
+	animation-name: loader;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-timing-function: ease;
+	animation-play-state: running;
+	//animation-fill-mode: forwards;
+	//animation-delay: 2s;
+}

@@ -1,0 +1,28 @@
+.c-clinicAddressFull {
+	overflow: hidden;
+	border-radius: var(--radius);
+	background: var(--white);
+	box-shadow: var(--shadow__1);
+	display: block;
+	&__head {
+		display: block;
+		padding: 25px;
+		min-height: 197px;
+		h3 {
+			@include preset__h3();
+		}
+		p {
+			@include preset__p();
+		}
+		address {
+			font-style: normal;
+		}
+	}
+	&__map {
+		iframe {
+			display: block;
+			width: 100%;
+			height: 300px;
+		}
+	}
+}

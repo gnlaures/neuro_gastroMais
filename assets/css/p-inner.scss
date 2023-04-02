@@ -1,0 +1,165 @@
+//// general
+.p-inner.p-news-article {
+	.s-listPosts {
+		padding-top: 0px;
+		background: transparent;
+	}
+	.s-gridPosts {
+		padding-top: 60px;
+	}
+}
+.p-inner.p-news-categories {
+	.s-listPosts {
+		padding-top: 0;
+		background: transparent;
+		box-shadow: none;
+		padding-bottom: 30px;
+	}
+}
+.p-inner.p-procedures {
+	.s-medicalProceduresPage {
+		padding-bottom: 40px;
+	}
+}
+.p-inner.p-schedule {
+	.l-innerPageContentHero {
+		padding-top: 0;
+	}
+	.s-schedule {
+		margin-top: 0;
+		.u-container {
+			align-items: flex-start;
+		}
+		&__call {
+			position: sticky;
+			top: 120px;
+		}
+	}
+}
+@media screen and (max-width: 1140px) {
+	.p-inner.p-schedule {
+		.s-schedule {
+			&__call {
+				position: relative;
+				top: 0px;
+			}
+		}
+	}
+}
+.p-inner.p-staff {
+	.s-doctor {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.s-photoGallery {
+		background: var(--white);
+		padding: 50px 0;
+		&:before {
+			display: none;
+		}
+	}
+}
+.p-inner.p-about {
+	.s-mvv,
+	.s-twoColsContent {
+		z-index: 6;
+	}
+}
+
+
+//.p-inner {
+//	.s-locations {
+//		background: var(--page__bg);
+//	}
+//	.s-schedule {
+//		background-color: transparent;
+//	}
+//	.s-doctor {
+//		background: transparent;
+//		padding-bottom: 0;
+//		&:after {
+//			display: none;
+//		}
+//		&__curve {
+//			display: none;
+//		}
+//		&__content {
+//			padding-top: 0;
+//			.cBtn {
+//				display: none;
+//			}
+//		}
+//	}
+//}
+//.p-inner.p-error {
+//	.s-locations {
+//		display: none;
+//	}
+//	.l-footer {
+//		padding-top: 30px;
+//	}
+//}
+//.p-inner.p-staff {
+//	.s-photoGallery {
+//		background: var(--white);
+//		box-shadow: var(--shadow__1);
+//		padding: 60px 0;
+//		margin: 60px 0;
+//		&:before {
+//			display: none;
+//		}
+//	}
+//}
+//.p-inner:not(.p-procedures) {
+//	.s-schedule {
+//		background-image: inherit;
+//		padding: 0;
+//	}
+//}
+//.p-inner.p-procedures {
+//	.s-schedule {
+//		margin-top: 60px;
+//	}
+//}
+//
+//// news
+//.p-inner.p-news,
+//.p-inner.p-news-categories,
+//.p-inner.p-news-article {
+//	.s-schedule {
+//		padding-top: 70px;
+//	}
+//}
+//
+//.p-inner.p-news-categories,
+//.p-inner.p-news-article {
+//	.s-listPosts {
+//		padding-top: 0;
+//	}
+//}
+//.p-inner.p-news-article {
+//	.s-gridPosts {
+//		padding-top: 60px;
+//	}
+//}
+//
+//// procedures - mobile
+//@media screen and (max-width: 1140px) {
+//	.p-inner.p-procedures {
+//		.l-innerPageContentHero {
+//			padding-bottom: 0;
+//		}
+//		.s-schedule {
+//			margin-top: 0;
+//		}
+//	}
+//}
+//
+//// contact
+//@media screen and (max-width: 740px) {
+//	.p-inner.p-contact {
+//		.s-locations {
+//			display: block !important;
+//		}
+//	}
+//}

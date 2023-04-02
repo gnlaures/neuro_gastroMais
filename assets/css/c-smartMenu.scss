@@ -1,0 +1,470 @@
+// menu com sub menus
+$c_smartMenu_defaultPaddingLeft: 15px;
+.c-smartMenu {
+	display: block;
+	position: relative;
+	z-index: 5;
+	width: 100%;
+
+	// main itens
+	> ul {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		flex-wrap: nowrap;
+		> li {
+			display: block;
+			position: relative;
+			margin-right: 35px;
+			> a:not(.cBtn) {
+				display: block;
+				height: 40px;
+				line-height: 40px;
+				white-space: nowrap;
+				//text-transform: uppercase;
+				font-size: 18px;
+				font-weight: var(--fw__regular);
+				position: relative;
+				&:after {
+					@include transition();
+					content: '';
+					display: block;
+					width: 100%;
+					height: 3px;
+					position: absolute;
+					left: 0;
+					bottom: -2px;
+					background: transparent;
+				}
+			}
+			> a.js-smartMenu__toggle {
+				padding-right: 18px;
+				&:before {
+					content: '';
+					@include transition();
+					position: absolute;
+					top: 50%;
+					right: 0;
+					margin-top: -4px;
+					width: 12px;
+					height: 12px;
+					background-image: url("../../assets/media/icons/icon_caret_down_white.svg");
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: contain;
+				}
+			}
+			&:last-of-type {
+				margin-right: 0;
+			}
+			&:hover {
+				> a.js-smartMenu__toggle {
+					&:before {
+						@include rotate(180deg, center);
+					}
+				}
+			}
+		}
+	}
+
+	// all sub itens
+	> ul {
+		> li {
+			ul {
+				display: none;
+				li {
+					display: block;
+				}
+				a {
+					@include transition();
+					display: block;
+					padding: 8px $c_smartMenu_defaultPaddingLeft;
+					font-size: 16px;
+					&.js-smartMenu__toggle {
+						font-weight: var(--fw__medium);
+						position: relative;
+						padding-right: 30px;
+						&:before {
+							@include transition();
+							content: '';
+							display: block;
+							width: 10px;
+							height: 10px;
+							position: absolute;
+							top: 50%;
+							right: 15px;
+							margin-top: -6px;
+							background: red;
+						}
+					}
+					&.is-active {
+						&:before {
+							@include rotate(180deg, center);
+						}
+					}
+				}
+				&.is-active {
+					display: block;
+				}
+			}
+		}
+	}
+
+	// first sub menu
+	> ul {
+		> li {
+			> ul {
+				@include preset__scroll();
+				@include transition();
+				border-radius: var(--radius);
+				box-shadow: var(--shadow__1);
+				overflow-y: auto;
+				max-height: 70vh;
+				width: 290px;
+				position: absolute;
+				left: -50%;
+				top: 100%;
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
+		}
+	}
+
+	// --onlyClick
+	&.--click {
+		> ul {
+			> li {
+				> a {
+					&.js-smartMenu__toggle {
+						&:before {
+							@include rotate(0, center);
+						}
+						&.is-active {
+							&:before {
+								@include rotate(180deg, center);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// themes
+	&.--white {
+		// main itens
+		> ul {
+			> li {
+				> a {
+					font-weight: var(--fw__regular);
+					color: var(--white);
+					&.js-smartMenu__toggle {
+						&:before {
+							border-color: var(--white) transparent transparent transparent;
+						}
+					}
+				}
+			}
+		}
+		// first sub menu
+		> ul {
+			> li {
+				> ul {
+					background: var(--white);
+				}
+			}
+		}
+		// all sub itens
+		> ul {
+			> li {
+				ul {
+					a {
+						color: var(--primary);
+						&.js-smartMenu__toggle {
+							&:before {
+								//background: url(#{$media_icons}icon_caret_down.svg);
+								background-repeat: no-repeat;
+								background-position: center;
+								background-size: contain;
+							}
+						}
+						&:hover {
+							background: var(--secondary);
+						}
+					}
+				}
+			}
+		}
+		// bg colors
+		> ul {
+			> li {
+				> ul {
+					> li {
+						> ul {
+							background: var(--white2);
+							> li {
+								> a {
+									padding-left: $c_smartMenu_defaultPaddingLeft + 10px;
+								}
+								> ul {
+									background: var(--text);
+									> li {
+										> a {
+											padding-left: $c_smartMenu_defaultPaddingLeft + 15px;
+										}
+										> ul {
+											background: var(--gray);
+											> li {
+												> a {
+													padding-left: $c_smartMenu_defaultPaddingLeft + 20px;
+												}
+												> ul {
+													background: var(--text);
+													> li {
+														> a {
+															padding-left: $c_smartMenu_defaultPaddingLeft + 25px;
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.--secondary {
+		// main itens
+		> ul {
+			> li {
+				> a {
+					color: var(--text);
+					&:hover {
+						&:after {
+							background: var(--text);
+						}
+					}
+					&.js-smartMenu__toggle {
+						position: relative;
+						&:before {
+							border-color: var(--secondary) transparent transparent transparent;
+						}
+					}
+				}
+			}
+		}
+		// sub itens
+		> ul {
+			> li {
+				ul {
+					background: var(--text);
+					a {
+						color: var(--white);
+						font-weight: var(--fw__medium);
+						&.js-smartMenu__toggle {
+							&:before {
+								//background: url(#{$media_icons}icon_caret_down_white.svg);
+								background-repeat: no-repeat;
+								background-position: center;
+								background-size: contain;
+							}
+						}
+						&:hover {
+							background: var(--secondary__dark);
+							color: var(--primary);
+						}
+					}
+					> li {
+						> ul {
+							background: var(--secondary__light);
+						}
+					}
+				}
+			}
+		}
+	}
+	&.--primary {
+		// main itens
+		> ul {
+			> li {
+				> a {
+					color: var(--primary);
+					&:hover {
+						&:after {
+							background: var(--primary);
+						}
+					}
+					&.js-smartMenu__toggle {
+						position: relative;
+						&:before {
+							border-color: var(--primary) transparent transparent transparent;
+						}
+					}
+				}
+			}
+		}
+		// sub itens
+		> ul {
+			> li {
+				ul {
+					background: var(--primary__dark);
+					a {
+						color: var(--secondary__dark);
+						font-weight: var(--fw__medium);
+						&.js-smartMenu__toggle {
+							&:before {
+								//background: url(#{$media_icons}icon_caret_down.svg);
+								background-repeat: no-repeat;
+								background-position: center;
+								background-size: contain;
+							}
+						}
+						&:hover {
+							background: var(--primary__dark);
+						}
+					}
+					> li {
+						> ul {
+							background: var(--primary__dight);
+						}
+					}
+				}
+			}
+		}
+	}
+	&.--gray {
+		// main itens
+		> ul {
+			> li {
+				> a {
+					color: var(--text);
+					&:hover {
+						color: var(--white);
+						&:after {
+							background: var(--white);
+						}
+					}
+					&.js-smartMenu__toggle {
+						position: relative;
+						&:before {
+							//border-color: var(--white) transparent transparent transparent;
+							@include transition();
+							filter: brightness(1);
+							background-image: url('../../assets/media/icons/icon_caret_down.svg');
+							background-repeat: no-repeat;
+							background-position: center;
+							background-size: contain;
+						}
+						&:hover {
+							&:before {
+								filter: brightness(2);
+							}
+						}
+					}
+				}
+			}
+		}
+		// sub itens
+		> ul {
+			> li {
+				ul {
+					background: var(--white2);
+					a {
+						color: var(--text);
+						font-weight: var(--fw__medium);
+						letter-spacing: -0.25px;
+						&.js-smartMenu__toggle {
+							&:before {
+								//background: url(#{$media_icons}icon_caret_down.svg);
+								background-repeat: no-repeat;
+								background-position: center;
+								background-size: contain;
+							}
+						}
+						&:hover {
+							background: var(--gray);
+						}
+					}
+					> li {
+						> ul {
+							background: var(--tex3);
+						}
+					}
+				}
+			}
+		}
+	}
+	&.--black {
+		// main itens
+		> ul {
+			> li {
+				> a {
+					color: var(--black2);
+					&:hover {
+						&:after {
+							background: var(--secondary);
+						}
+					}
+					&.js-smartMenu__toggle {
+						position: relative;
+						&:before {
+
+						}
+					}
+				}
+			}
+		}
+		// sub itens
+		> ul {
+			> li {
+				ul {
+					background: var(--secondary);
+					a {
+						color: var(--white);
+						font-weight: var(--fw__semiBold);
+						&.js-smartMenu__toggle {
+							&:before {
+								background: pink;
+								background-repeat: no-repeat;
+								background-position: center;
+								background-size: contain;
+							}
+						}
+						&:hover {
+							background: var(--secondary__dark);
+							color: var(--primary);
+						}
+					}
+					> li {
+						> ul {
+							background: var(--secondary__dark);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// layout - vertical
+	&.--vertical {
+		> ul {
+			display: block;
+			> li {
+				margin-right: 0;
+				> ul {
+					@include translate(0,0,center);
+					//@include roundedAll();
+					width: 100%;
+					position: relative;
+					left: 0;
+					max-height: inherit;
+				}
+			}
+		}
+	}
+}

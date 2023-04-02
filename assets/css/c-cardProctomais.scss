@@ -1,0 +1,48 @@
+@mixin cCardProctomaisCenter() {
+	.c-cardProctomais {
+		&__brand {
+			margin: 0 auto;
+		}
+		&__text {
+			* {
+				text-align: center;
+			}
+		}
+		&__social {
+			.c-socialList {
+				justify-content: center;
+			}
+		}
+	}
+}
+.c-cardProctomais {
+	&__brand {
+		@include flexWidth(175px);
+	}
+	&__text {
+		padding: 20px 0;
+		p {
+			@include preset__p(var(--white));
+		}
+	}
+	&__social {
+		.c-socialList {
+			li a {
+				background: var(--white);
+				svg {
+				}
+			}
+		}
+	}
+
+	&.--dark {
+		.c-brand {
+			.c-brand__dark {
+				display: block;
+			}
+			.c-brand__light {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+.c-slideArrows {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 122px;
+	&__arrow {
+		@include transition();
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		height: 56px;
+		width: 56px;
+		border-radius: 50%;
+		background: var(--white);
+		box-shadow: var(--shadow__1);
+		cursor: pointer;
+		svg {
+			display: block;
+			width: 24px;
+			height: 24px;
+			path {
+				fill: var(--primary)
+			}
+		}
+		&.--l {
+			@include rotate(180deg, center);
+		}
+		&.swiper-button-disabled {
+			pointer-events: none;
+			opacity: 0.1;
+		}
+		&:hover {
+			background: var(--secondary);
+		}
+	}
+
+	&.--full {
+		width: 100%;
+	}
+}

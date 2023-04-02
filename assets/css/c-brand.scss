@@ -1,0 +1,22 @@
+.c-brand {
+	display: block;
+	width: 100%;
+	* {
+		display: block;
+		width: 100%;
+		border-radius: 0 !important;
+	}
+
+	.c-brand__dark {
+		display: none;
+	}
+
+	&.--dark {
+		.c-brand__dark {
+			display: block;
+		}
+		.c-brand__light {
+			display: none;
+		}
+	}
+}

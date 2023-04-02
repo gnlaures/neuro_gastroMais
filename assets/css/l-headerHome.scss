@@ -1,0 +1,252 @@
+.l-headerHome {
+	display: block;
+	padding-top: 120px;
+	padding-bottom: 180px;
+	position: relative;
+	//overflow: hidden;
+	.u-container {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-between;
+		position: relative;
+		z-index: 2;
+	}
+	&__bg {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: flex-end;
+		width: 100%;
+		height: auto;
+		position: absolute;
+		top: 0;
+		right: 0;
+		img {
+			display: block;
+			max-width: 100%;
+		}
+	}
+	&__content {
+		display: block;
+		padding-top: 75px;
+		max-width: 660px;
+		position: relative;
+		z-index: 2;
+		h1 {
+			@include preset__h1($tc: var(--text__dark));
+			margin-bottom: 15px;
+		}
+		> p {
+			@include preset__p__l($tc: var(--text));
+			max-width: 500px;
+		}
+		> span {
+			@include preset__p($tc: var(--text));
+			display: block;
+			font-size: 16px;
+			a {
+				color: var(--text__Dark);
+				&:focus {
+					background: var(--primary);
+				}
+			}
+		}
+		.c-cta {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.c-scrollLink {
+			position: absolute;
+			bottom: -115px;
+		}
+	}
+}
+@media screen and (max-width: 1300px) {
+	.l-headerHome__content {
+		padding-top: 80px;
+		max-width: 490px;
+		h1 {
+			font-size: 46px;
+		}
+		p {
+			font-size: 18px;
+		}
+	}
+}
+@media screen and (max-width: 1180px) {
+	.l-headerHome {
+		//background: var(--white);
+		padding-bottom: 0;
+		min-height: 850px;
+	}
+	.l-headerHome .u-container {
+		justify-content: center;
+	}
+	.l-headerHome__bg {
+		top: inherit;
+		bottom: 0;
+		img {
+			height: 850px;
+			object-fit: cover;
+			object-position: center bottom;
+		}
+	}
+	.l-headerHome__content {
+		max-width: 600px;
+		text-align: center;
+		> * {
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+			justify-content: center;
+		}
+		> h1, p, span {
+			//color: var(--white);
+		}
+		.c-cta {
+			box-shadow: var(--shadow__1);
+		}
+		.c-scrollLink {
+			position: relative;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin-top: 35px;
+			* {
+				text-align: center;
+				margin-left: auto;
+				margin-right: auto;
+				//color: var(--white);
+			}
+			svg path {
+				//fill: var(--white);
+			}
+		}
+	}
+}
+@media screen and (max-width: 540px) {
+	.l-headerHome {
+		min-height: 750px;
+	}
+	.l-headerHome__bg img {
+		height: 750px;
+	}
+	.l-headerHome__content {
+		padding-top: 50px;
+		h1 {
+			font-size: 36px;
+		}
+	}
+}
+@media screen and (max-width: 460px) {
+	.l-headerHome__content .c-cta {
+		@include cCta__small;
+	}
+	.l-headerHome__content {
+		.c-scrollLink {
+			* {
+				color: var(--secondary__dark);
+			}
+			svg path {
+				fill: var(--secondary__dark);
+			}
+		}
+	}
+}
+
+//@media screen and (max-width: 1360px) {
+//	.l-headerHome {
+//		&__picture {
+//			img {
+//				left: 0;
+//			}
+//		}
+//	}
+//}
+//@media screen and (max-width: 1140px) {
+//	.l-headerHome {
+//		padding-bottom: 0px;
+//		overflow: inherit;
+//		&:after {
+//			display: none;
+//		}
+//		.u-container {
+//			display: block;
+//			padding: 0;
+//		}
+//		&__content {
+//			@include cleanFlexHeight();
+//			width: 100%;
+//			max-width: 640px;
+//			margin: 0 auto;
+//			padding-top: 70px;
+//			padding-left: 20px;
+//			padding-right: 20px;
+//			padding-bottom: 0;
+//			* {
+//				text-align: center;
+//			}
+//			.c-cta {
+//				margin-left: auto;
+//				margin-right: auto;
+//			}
+//		}
+//		&__clinics {
+//			justify-content: center;
+//			padding-top: 60px;
+//		}
+//		&__picture {
+//			height: auto;
+//			width: 100%;
+//			margin-top: 40px;
+//			img {
+//				display: block;
+//				width: auto;
+//				max-width: 100%;
+//				height: auto;
+//				position: relative;
+//				object-position: center;
+//				object-fit: inherit;
+//				margin: 0 auto;
+//			}
+//		}
+//		&__brandEffect {
+//			@include rotate(-2.91deg, center);
+//			left: -10%;
+//			bottom: -142px;
+//			height: auto;
+//			img {
+//				left: 0;
+//				top: 0;
+//				height: 280px;
+//			}
+//		}
+//
+//		&__curve {
+//			display: none;
+//		}
+//	}
+//}
+//@media screen and (max-width: 640px) {
+//	.l-headerHome__content {
+//		h1 {
+//			font-size: 42px;
+//		}
+//	}
+//}
+//@media screen and (max-width: 550px) {
+//	.l-headerHome__clinics {
+//		display: none;
+//	}
+//	.l-headerHome__picture {
+//		display: block;
+//		margin-top: 20px;
+//	}
+//}
+//@media screen and (max-width: 470px) {
+//	.l-headerHome__content .c-cta {
+//		@include cCta__br;
+//		@include cCta__small;
+//	}
+//}

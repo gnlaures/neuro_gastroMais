@@ -1,0 +1,25 @@
+.c-tag {
+	display: inline-block;
+	padding: 4px 12px;
+	background: var(--white);
+	border-radius: var(--radius);
+	color: var(--primary);
+	font-size: 14px;
+}
+a.c-tag {
+	@include transition();
+	background: var(--primary);
+	color: var(--white);
+	cursor: pointer;
+	&:hover {
+		background: var(--primary__dark);
+	}
+	&:focus {
+		background: var(--primary__dark);
+	}
+}
+@media screen and (max-width: 420px) {
+	.c-tag {
+		font-size: 12px;
+	}
+}

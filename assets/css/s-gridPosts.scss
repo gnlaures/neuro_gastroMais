@@ -1,0 +1,20 @@
+.s-gridPosts {
+	display: block;
+	h2 {
+		@include preset__h2();
+		margin-bottom: 15px;
+	}
+	&.--videos {
+		padding: 60px 0;
+	}
+}
+
+.s-gridPosts.--videos {
+	.c-responsiveGrid.--col3 {
+		li {
+			&:last-of-type {
+				display: none;
+			}
+		}
+	}
+}

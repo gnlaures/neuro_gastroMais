@@ -1,0 +1,11 @@
+.s-faq {
+	.u-container {
+		max-width: 820px;
+	}
+	.c-toggleItem {
+		margin-bottom: 30px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}

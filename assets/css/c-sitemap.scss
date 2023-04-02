@@ -1,0 +1,32 @@
+.c-sitemap {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	&__group {
+		margin-right: 45px;
+		&:last-of-type {
+			margin-right: 0;
+		}
+		h4 {
+			@include preset__h4(var(--text__dark));
+			margin-bottom: 5px;
+			font-size: 18px;
+		}
+		ul {
+			li {
+				margin-bottom: 5px;
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+				a {
+					@include preset__p(var(--white));
+					font-size: 16px;
+					&:hover {
+						color: var(--text__dark)
+					}
+				}
+			}
+		}
+	}
+}

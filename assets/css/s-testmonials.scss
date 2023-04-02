@@ -1,0 +1,24 @@
+.s-testmonials {
+	display: block;
+	position: relative;
+	z-index: 1;
+	padding: 80px 0;
+	.u-container {
+		max-width: 860px;
+	}
+	i {
+		display: block;
+		margin: 0 auto 20px auto;
+		svg {
+			display: block;
+			width: 80px;
+			height: 80px;
+			margin: 0 auto;
+		}
+	}
+	p {
+		@include preset__p__l();
+		text-align: center;
+		font-size: 20px;
+	}
+}

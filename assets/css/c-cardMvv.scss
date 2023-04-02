@@ -1,0 +1,27 @@
+.c-cardMvv {
+	display: block;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow__1);
+	background: var(--white);
+	padding: 35px;
+	&__icon {
+		display: block;
+		width: 100%;
+		svg {
+			display: block;
+			width: 60px;
+			height: 60px;
+			margin: 0 auto;
+		}
+	}
+	&__title {
+		@include preset__h3();
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 10px;
+	}
+	&__text {
+		@include preset__p();
+		text-align: center;
+	}
+}

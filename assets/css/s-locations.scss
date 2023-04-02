@@ -1,0 +1,56 @@
+.s-locations {
+	display: block;
+	position: relative;
+	z-index: 2;
+	min-height: 590px;
+	padding-top: 15px;
+	padding-bottom: 60px;
+	background-color: var(--white);
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		height: 670px;
+		z-index: 1;
+		background-image: url("../../assets/media/img/effect_footer.png");
+		background-repeat: no-repeat;
+		background-position: bottom left;
+		background-size: cover;
+	}
+	.u-container {
+		position: relative;
+		z-index: 2;
+	}
+	ul {
+		@include calcWidthForPositionNegative(-15px);
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		> li {
+			@include flexWidth(50%);
+			padding: 0 15px;
+		}
+	}
+}
+@media screen and (max-width: 740px) {
+	.s-locations {
+		display: none;
+		.u-container {
+			max-width: 600px;
+		}
+	}
+	.s-locations ul {
+		@include calcWidthForPositionNegative(-10px);
+		flex-wrap: wrap;
+		> li {
+			@include flexWidth(100%);
+			padding: 10px;
+		}
+	}
+}

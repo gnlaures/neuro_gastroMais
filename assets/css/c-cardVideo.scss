@@ -1,0 +1,57 @@
+.c-cardVideo {
+	@include transition();
+	display: block;
+	width: 100%;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow__1);
+	background: var(--white);
+	&__cover {
+		display: block;
+		position: relative;
+		figure {
+			@extend .u-aspectRatio;
+			@extend .--ratio-16-9;
+			border-radius: var(--radius);
+			background: var(--primary__gradient);
+			img {
+				@include transition();
+				@include scale(1, center);
+				opacity: 0.75;
+			}
+		}
+		i {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -30px;
+			margin-top: -30px;
+			padding: 10px;
+			border-radius: 50%;
+			svg {
+				@include transition();
+				display: block;
+				width: 60px;
+				height: 60px;
+				opacity: 1;
+			}
+		}
+	}
+	&__infos {
+		padding: 20px;
+		h3 {
+			@include preset__h4();
+		}
+	}
+
+	&:hover {
+		.c-cardVideo__cover {
+			figure img {
+				@include scale(1.1, center);
+				opacity: 0.9;
+			}
+			i svg {
+				opacity: 0.75;
+			}
+		}
+	}
+}

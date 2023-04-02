@@ -1,0 +1,21 @@
+.c-cardDoctor {
+	display: block;
+	width: 100%;
+	img {
+		border-radius: 30px;
+		display: block;
+		width: 100%;
+	}
+	&__infos {
+		padding-top: 15px;
+		p {
+			@include preset__p();
+			color: var(--primary__ultraDark);
+			font-size: 14px;
+			strong {
+				display: block;
+				font-weight: var(--fw__bold);
+			}
+		}
+	}
+}

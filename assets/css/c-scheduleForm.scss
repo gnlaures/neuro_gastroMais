@@ -1,0 +1,23 @@
+.c-scheduleForm {
+	border-radius: var(--radius);
+	background: var(--white);
+	padding: 50px 65px;
+	box-shadow: var(--shadow__2);
+}
+@media screen and (max-width: 780px) {
+	.c-scheduleForm {
+		padding: 25px 30px;
+	}
+}
+@media screen and (max-width: 640px) {
+	.c-scheduleForm {
+		.cField {
+			@include flexWidth(100%);
+		}
+	}
+}
+@media screen and (max-width: 380px) {
+	.c-scheduleForm {
+		padding: 10px 20px;
+	}
+}

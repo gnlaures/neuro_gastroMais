@@ -1,0 +1,27 @@
+.c-neurodigital {
+	a {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+		i {
+			@include flexWidth(18px);
+			* {
+				display: block;
+				width: 18px;
+				height: 18px;
+				path {
+					fill: var(--primary__light);
+				}
+			}
+		}
+		span {
+			@include preset__p(var(--white));
+			font-size: 14px;
+			padding-left: 6px;
+			strong {
+				font-weight: var(--fw__bold);
+			}
+		}
+	}
+}

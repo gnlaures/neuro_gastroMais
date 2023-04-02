@@ -1,0 +1,18 @@
+.s-error {
+	display: block;
+	padding: 250px 40px 200px 40px;
+	//background: var(--primary__gradient);
+	text-align: center;
+	h1 {
+		@include preset__h1(var(--secondary));
+		text-align: center;
+	}
+	h2 {
+		@include preset__h3(var(--secondary));
+		margin: 20px 0 25px 0;
+		text-align: center;
+	}
+	.cBtn {
+		margin: 0 auto;
+	}
+}

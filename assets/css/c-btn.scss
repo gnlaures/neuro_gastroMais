@@ -1,0 +1,221 @@
+.cBtn {
+	@include transition();
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	
+	&:before {
+		@include transition();
+		@include rotate(180deg, center);
+		content: '';
+		display: block;
+		width: 96%;
+		height: 90%;
+		position: absolute;
+		top: 5%;
+		left: 2%;
+		z-index: 2;
+		opacity: 0;
+	}
+	
+	&__hero {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: nowrap;
+		position: relative;
+		z-index: 3;
+	}
+	&__caption {
+
+	}
+	&__icon {
+		* {
+			display: block;
+			object-fit: contain;
+		}
+	}
+
+	// sizes
+	&.--l {
+		border-radius: var(--btn__l__radius);
+		.cBtn__hero {
+			min-height: var(--btn__l__minHeight);
+			padding: var(--btn__l__padding);
+		}
+		.cBtn__icon {
+			width: calc(var(--btn__l__icon__size) + var(--btn__l__icon__spacer));
+			height: var(--btn__l__icon__size);
+			padding-left: calc(var(--btn__l__icon__spacer) / 2);
+			padding-right: calc(var(--btn__l__icon__spacer) / 2);
+			* {
+				width: var(--btn__l__icon__size);
+				height: var(--btn__l__icon__size);
+			}
+		}
+		.cBtn__caption {
+			padding-left: calc(var(--btn__l__icon__spacer) / 2);
+			padding-right: calc(var(--btn__l__icon__spacer) / 2);
+			font-weight: var(--btn__l__caption__fw);
+			font-size: var(--btn__l__caption__fs);
+		}
+		&:before {
+			border-radius: var(--btn__l__radius);
+		}
+	}
+	&.--m {
+		border-radius: var(--btn__m__radius);
+		.cBtn__hero {
+			min-height: var(--btn__m__minHeight);
+			padding: var(--btn__m__padding);
+		}
+		.cBtn__icon {
+			width: calc(var(--btn__m__icon__size) + var(--btn__m__icon__spacer));
+			height: var(--btn__m__icon__size);
+			padding-left: calc(var(--btn__m__icon__spacer) / 2);
+			padding-right: calc(var(--btn__m__icon__spacer) / 2);
+			* {
+				width: var(--btn__m__icon__size);
+				height: var(--btn__m__icon__size);
+			}
+		}
+		.cBtn__caption {
+			padding-left: calc(var(--btn__m__icon__spacer) / 2);
+			padding-right: calc(var(--btn__m__icon__spacer) / 2);
+			font-weight: var(--btn__m__caption__fw);
+			font-size: var(--btn__m__caption__fs);
+		}
+		&:before {
+			border-radius: var(--btn__m__radius);
+		}
+	}
+	&.--s {
+		border-radius: var(--btn__s__radius);
+		.cBtn__hero {
+			min-height: var(--btn__s__minHeight);
+			padding: var(--btn__s__padding);
+		}
+		.cBtn__icon {
+			width: calc(var(--btn__s__icon__size) + var(--btn__s__icon__spacer));
+			height: var(--btn__s__icon__size);
+			padding-left: calc(var(--btn__s__icon__spacer) / 2);
+			padding-right: calc(var(--btn__s__icon__spacer) / 2);
+			* {
+				width: var(--btn__s__icon__size);
+				height: var(--btn__s__icon__size);
+			}
+		}
+		.cBtn__caption {
+			padding-left: calc(var(--btn__s__icon__spacer) / 2);
+			padding-right: calc(var(--btn__s__icon__spacer) / 2);
+			font-weight: var(--btn__s__caption__fw);
+			font-size: var(--btn__s__caption__fs);
+		}
+		&:before {
+			border-radius: var(--btn__s__radius);
+		}
+	}
+
+	// themes
+	&.--secondary {
+		background-image: var(--secondary__gradient);
+		background-color: var(--secondary);
+		&:before {
+			background: var(--secondary__gradient);
+		}
+		.cBtn__caption {
+			color: var(--white);
+		}
+		&:hover {
+			background-color: var(--secondary__dark);
+			&:before {
+				opacity: 1;
+			}
+		}
+	}
+	&.--primary {
+		background-image: var(--primary__gradient);
+		background-color: var(--primary);
+		&:before {
+			background: var(--primary__gradient);
+		}
+		.cBtn__caption {
+			color: var(--white);
+		}
+		&:hover {
+			background-color: var(--primary__dark);
+			&:before {
+				opacity: 1;
+			}
+		}
+	}
+	&.--white {
+		background: var(--white);
+		.cBtn__icon {
+			svg {
+				path {
+					fill: var(--text);
+				}
+			}
+		}
+		.cBtn__caption {
+			color: var(--text);
+		}
+		&:hover {
+			background: var(--white2);
+			.cBtn__icon {
+				svg {
+					path {
+						fill: var(--text__dark);
+					}
+				}
+			}
+			.cBtn__caption {
+				color: var(--text__dark);
+			}
+		}
+	}
+	&.--text {
+		background: var(--text);
+		.cBtn__icon {
+			svg {
+				path {
+					fill: var(--gray);
+				}
+			}
+		}
+		.cBtn__caption {
+			color: var(--gray);
+		}
+		&:hover {
+			background: var(--text__dark);
+		}
+	}
+	&.--disabled {
+		background: var(--gray2);
+		pointer-events: none;
+		cursor: not-allowed;
+		.cBtn__icon {
+			svg {
+				path {
+					fill: var(--gray4);
+				}
+			}
+		}
+		.cBtn__caption {
+			color: var(--gray4);
+		}
+	}
+
+	// hover
+	&:hover {
+		&:before {
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+	}
+
+}

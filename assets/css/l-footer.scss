@@ -1,0 +1,97 @@
+.l-footer {
+	position: relative;
+	z-index: 1;
+	background: var(--primary);
+	max-width: 1920px;
+	width: 100%;
+	margin: 0 auto;
+	&:before {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 32px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		background: var(--page__bg);
+	}
+	&__effect {
+		display: block;
+		width: 100%;
+		position: absolute;
+		top: 30px;
+		left: 0;
+		z-index: 1;
+		img {
+			display: block;
+			width: 100%;
+			height: 290px;
+			object-fit: cover;
+			object-position: top center;
+		}
+	}
+	&__hero {
+		position: relative;
+		z-index: 2;
+	}
+	&__row {
+		position: relative;
+		z-index: 2;
+		padding: 35px 0;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-between;
+		border-bottom: 1px solid rgba(255,255,255,0.2);
+	}
+	&__col {
+
+	}
+
+	.u-container {
+	}
+
+	.c-cardProctomais {
+		max-width: 400px;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.l-footer {
+		.u-container {
+			max-width: 600px;
+		}
+		&__row {
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		&__col {
+			@include flexWidth(100%);
+			&.--sitemap {
+				display: none;
+			}
+		}
+
+		.c-cardProctomais {
+			@include cCardProctomaisCenter;
+			margin: 0 auto;
+		}
+		.c-copyright {
+			* {
+				text-align: center;
+			}
+		}
+		.c-neurodigital {
+			margin-top: 15px;
+			a {
+				justify-content: center;
+			}
+		}
+	}
+}
+@media screen and (max-width: 740px) {
+	.l-footer {
+		padding-top: 40px;
+		padding-bottom: 20px;
+	}
+}

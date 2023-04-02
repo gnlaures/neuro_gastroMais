@@ -1,0 +1,25 @@
+.s-medicalProcedure {
+	i , i img {
+		max-width: 60px;
+		margin-bottom: 10px;
+	}
+	h2 {
+		@include preset__h3();
+	}
+	.cBtn {
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-width: 1140px) {
+	.s-medicalProcedure {
+		background: var(--white__gradient);
+		box-shadow: var(--shadow__1);
+		padding-bottom: 50px;
+		* {
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+	}
+}

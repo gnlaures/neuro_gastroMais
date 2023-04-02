@@ -1,0 +1,58 @@
+@keyframes cScrollLink {
+	from {
+		@include scale(1, center);
+		top: 0;
+	}
+	to {
+		@include scale(0.95, center);
+		top: -15px
+	}
+}
+@mixin animation__scrollLink() {
+	animation-name: cScrollLink;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease;
+	animation-play-state: running;
+	//animation-fill-mode: forwards;
+	//animation-delay: 2s;
+}
+.c-scrollLink {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	* {
+		display: block;
+		text-align: left;
+	}
+	&__text {
+		@include preset__p();
+		color: var(--primary);
+		font-size: 14px;
+		display: block;
+		line-height: 0.9;
+		margin-top: 5px;
+		* {
+			display: inline;
+			font-weight: var(--fw__bold);
+		}
+	}
+	&__icon {
+		display: block;
+		@include animation__scrollLink;
+		position: relative;
+		svg {
+			@include rotate(90deg, center);
+			position: relative;
+			display: block;
+			width: 20px;
+			height: 20px;
+			path {
+				fill: var(--primary);
+			}
+		}
+	}
+}

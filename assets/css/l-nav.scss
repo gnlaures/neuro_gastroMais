@@ -1,0 +1,257 @@
+.l-nav {
+	@include transition();
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	z-index: 10;
+	background: transparent;
+	border-bottom: 1px solid transparent;
+	.u-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__start {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	&__hamburguer {
+		display: none;
+	}
+
+	&__brand {
+		@include flexWidth(180px);
+	}
+	&__menu {
+
+	}
+	&__cta {
+		@include flexWidth(270px);
+	}
+
+	&__hero {
+		@include transition();
+		padding: 30px 0;
+	}
+	&__contact {
+		display: none;
+		background: var(--primary__dark);
+		.u-container, ul {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			padding: 0;
+		}
+		a {
+			@include transition();
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+			padding: 10px 20px;
+			i, i svg {
+				display: block;
+				@include flexHeight(18px);
+				@include flexWidth(18px);
+				path {
+					fill: var(--white);
+				}
+			}
+			span {
+				color: var(--white);
+				padding-left: 6px;
+				display: block;
+				font-size: 14px;
+			}
+			&:hover {
+				background: var(--primary__ultraDark);
+			}
+		}
+	}
+
+	&.--scrolled {}
+	&.--scrolledDown {
+		background: var(--white);
+		border-bottom: 1px solid var(--gray);
+		.l-nav__hero {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	}
+	&.--scrolledUp {
+		background: var(--white);
+		border-bottom: 1px solid var(--gray);
+		.l-nav__hero {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	}
+
+	.c-smartMenu {
+		>ul>li>a {
+			color: var(--text);
+			&:before {
+				filter: brightness(1);
+			}
+			&:hover {
+				color: var(--text__dark);
+				&:before {
+					filter: brightness(0) !important;
+				}
+				&:after {
+					background: var(--primary);
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1180px) {
+	.l-nav {
+		//background: var(--white);
+	}
+}
+@media screen and (max-width: 1024px) {
+	.l-nav {
+		&__hamburguer {
+			display: block;
+			margin-right: 25px;
+		}
+		&__menu {
+			display: none;
+		}
+	}
+}
+@media screen and (max-width: 670px) {
+	.l-nav {
+		&__brand {
+			@include flexWidth(150px);
+		}
+		&__cta {
+			@include flexWidth(235px);
+			.c-cta {
+				@include cCta__small;
+			}
+		}
+	}
+}
+@media screen and (max-width: 550px) {
+	.l-nav {
+		&__start {
+			@include flexWidth(100%);
+			justify-content: space-between;
+		}
+		&__hamburguer {
+			margin-right: 0;
+			order: 2;
+		}
+		&__brand {
+			order: 1;
+		}
+		&__cta {
+			display: none;
+		}
+		&__contact {
+			display: block;
+		}
+	}
+}
+
+.l-navMobile {
+	@include hideElement;
+	@include transition();
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+
+	&__mask {
+		@include contentMasks();
+	}
+	&__content {
+		@include transition($delay: 50ms, $duration: 280ms);
+		@include preset__scroll();
+		display: block;
+		width: 100%;
+		max-width: 400px;
+		height: 100vh;
+		background: var(--primary__dark);
+		position: fixed;
+		top: 0;
+		z-index: 2;
+		overflow: auto;
+		padding-bottom: 100px;
+		&__hero {
+			padding: 50px;
+		}
+		&.--left {
+			left: -500px;
+		}
+		&.--right {
+			right: -500px;
+		}
+	}
+
+	&__widget {
+		display: block;
+		margin-bottom: 50px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	&__close {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		margin-bottom: 30px;
+	}
+
+	.c-sitemap {
+		display: block;
+		.c-sitemap__group {
+			margin-right: 0;
+			margin-bottom: 35px;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.c-socialList li a {
+		background: var(--white);
+		&:hover {
+			background: var(--white2);
+		}
+	}
+
+	&.is-active {
+		@include showElement;
+		.l-navMobile__content {
+			opacity: 1;
+			&.--left {
+				left: 0;
+			}
+			&.--right {
+				right: 0;
+			}
+		}
+	}
+}
+@media screen and (max-width: 500px) {
+	.l-navMobile__content {
+		max-width: 260px;
+	}
+	.l-navMobile__content__hero {
+		padding: 30px;
+	}
+}

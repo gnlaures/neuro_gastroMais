@@ -1,0 +1,73 @@
+$cNewsletterRadius: 40px;
+
+.c-newsletter {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 60px;
+	border-radius: $cNewsletterRadius;
+	box-shadow: var(--shadow__1);
+	position: relative;
+	background: var(--white);
+	&:before, &:after {
+		content: '';
+		display: block;
+		position: absolute;
+		border-radius: $cNewsletterRadius;
+		overflow: hidden;
+	}
+	&:before {
+		left: 20px;
+		top: 10%;
+		height: 80%;
+		background-image: url("../../assets/media/img/newsletter_before.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		width: 250px;
+	}
+	&:after {
+		right: 0;
+		top: 0;
+		height: 100%;
+		background-image: url("../../assets/media/img/newsletter_after.png");
+		background-repeat: no-repeat;
+		background-position: top right;
+		background-size: contain;
+		width: 180px;
+	}
+	&__content {
+		display: block;
+		width: 100%;
+		max-width: 780px;
+		position: relative;
+		z-index: 2;
+	}
+	h3 {
+		@include preset__h3();
+		text-align: center;
+		width: 100%;
+		max-width: 540px;
+		margin: 0 auto;
+	}
+	.cForm {
+		padding-top: 10px;
+		&__group {
+			align-items: flex-end;
+		}
+	}
+}
+@media screen and (max-width: 1024px) {
+	.c-newsletter {
+		.cField {
+			@include flexWidth(100%);
+		}
+	}
+}
+@media screen and (max-width: 520px) {
+	.c-newsletter {
+		padding: 20px 30px;
+	}
+}
